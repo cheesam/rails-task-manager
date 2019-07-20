@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasks</title>
+</head>
+<body>
+  <h1>My tasks</h1>
+    <%= link_to "Create task", new_task_path %>
+    <% @tasks.each do |task| %>
+      <h2><%= link_to task.title, task_path(task) %></h2>
+      <p><%= task.completed %></p>
+      <i class="fas fa-trash-alt"><%= link_to, task_path(task), method: :delete %></i>
+    <% end %>
+</body>
+</html>
